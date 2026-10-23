@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Superhero Power Cards</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #284eb5;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #740c0c;
+    }
+
+    p {
+      color: #444444;
+    }
+
+    button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background-color: white;
+      border: 3px solid #820606;
+      border-radius: 12px;
+      width: 220px;
+      padding: 18px;
+    }
+
+    .hero-name {
+      font-size: 22px;
+      font-weight: bold;
+      color: #4bbc0a;
+    }
+
+    .hero-power {
+      color: #5d0ba5;
+      font-weight: bold;
+    }
+
+    .hero-mission {
+      color: #666666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>My Superhero Power Cards</h1>
+
+  <p>
+    Click the button to create superhero objects using JavaScript classes.
+  </p>
+
+  <button onclick="showHeroes()">Show Superheroes</button>
+
+  <div class="card-container" id="heroCards"></div>
+
+  <script>
+    // What is a Class?
+    // A class is a blueprint used to create objects.
+
+    class Superhero {
+
+      // Constructor
+      constructor(name, power, mission) {
+
+        // The this keyword stores values inside the object
+        this.name = name;
+        this.power = power;
+        this.mission = mission;
+      }
+
+      // Class Method
+      describeHero() {
+        return "<div class='hero-card'>" +
+               "<p class='hero-name'>" + this.name + "</p>" +
+               "<p class='hero-power'>Power: " + this.power + "</p>" +
+               "<p class='hero-mission'>Mission: " + this.mission + "</p>" +
+               "</div>";
+      }
+    }
+
+    function showHeroes() {
+
+      // Creating Objects
+      let hero1 = new Superhero(
+        "Captain america",
+        "protects people from crime",
+        "help army and goverment fight the bad."
+      );
+
+      let hero2 = new Superhero(
+        "Flash",
+        "Super speed ",
+        "can defeat enemy by it speed and can time travel."
+      );
+
+      let hero3 = new Superhero(
+        "batman",
+        "helps the city from evil enemy",
+        "Use it power full vehicals and technology."
+      );
+
+      let hero4 = new Superhero(
+        "superman",
+        "an powerful being that came from another planet",
+        "has super strength and lazer eyes that can destroy the evils."
+      );
+
+      document.getElementById("heroCards").innerHTML =
+        hero1.describeHero() +
+        hero2.describeHero() +
+        hero3.describeHero() +
+        hero4.describeHero();
+    }
+  </script>
+
+</body>
+</html>
